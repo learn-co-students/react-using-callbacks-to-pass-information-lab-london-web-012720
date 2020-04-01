@@ -1,0 +1,31 @@
+In React, props are used to pass information down the component tree, from parents to children.
+
+ In order to propagate information in the opposite direction, we can use callback functions, also passed down as props from parent components to children.
+ 
+  However, because these functions are defined in the parent, they will still be in that context if called from a child component.
+
+This allows the callback to be owned by a different component than the one invoking it.
+
+Once invoked, the callback can effect change in the component that owns it, instead of the component that called it.
+
+For this code-along, we'll explore this concept by creating an interactive "pixel" drawing app entirely out React components and data.
+
+
+We would like to implement the following behavior: 
+
+The ColorSelector component provides the user interface to select a specific color. 
+
+When a particular Cell is clicked, its background color becomes whatever the current selected color is. 
+
+To achieve this behavior, we need some way for Cell to know about the currently selected color and ColorSelector to modify the selected color based on user input.
+
+to do this, we will have the parent component, Matrix, keep track of the current selected color.
+
+is not possible to pass info between siblings
+
+
+ColorSelector has a way to set some 'selected color' in Matrix when a user selects a color
+
+Cell has a way to know what the current selected color is when it is clicked
+
+Using callbacks as props, we can do both of these things pretty easily!
